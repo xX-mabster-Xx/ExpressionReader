@@ -168,7 +168,7 @@ string dtos(double d) {
     return res;
 }
 
-double stod(string s) {
+double stod1(string s) {
     int i = 0;
     double res = 0;
     while (i < s.size() && s[i] != '.'){
@@ -280,7 +280,7 @@ void operator-=(Polynomial & p1, const Polynomial & p2) {
     p1 = p1 - p2;
 }
 
-Polynomial poly(int t) {
+Polynomial poly(double t) {
     return (Monomial){0, t, ""} + (Monomial){0, 0, ""};
 }
 
@@ -326,7 +326,7 @@ Monomial read_monom(string s){
         bf += s[i];
         ++i;
     }
-    k = stod(bf);
+    k = stod1(bf);
     int ind = i;
     while (i < s.size()) {
         if (isalpha(s[i])) {
@@ -485,7 +485,7 @@ string solve_powers(string s) {
                 //cout << res << "\n";
                 res.erase(i, 1);
             }
-            for (int k = 0; k < stod(exp) - 1; ++k) {
+            for (int k = 0; k < stod1(exp) - 1; ++k) {
                 //cout << res << "\n";
                 res.insert(i, base);
             }
